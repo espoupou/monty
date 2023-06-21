@@ -1,13 +1,31 @@
 #include "monty.h"
 
 /**
- * init_check - check basics
+ * _init - check basics
  *
- * Return: status
+ * Return: nothing
  */
-int init_check()
+
+void _init()
 {
 	char *error;
+
+	if (ac != 2)
+	{
+		error = error_usage();
+		write(STDERR_FILENO, error, _strlen(error));
+		free(error);
+		exit(EXIT_FAILURE);
+	}
+
+	datas = malloc(sizeof(data_t));
+	if (datas == NULL)
+	{
+		error = error_malloc();
+		write(STDERR_FILENO, error, _strlen(error));
+		free(error);
+		exit(EXIT_FAILURE);
+	}
 }
 
 /**
@@ -19,15 +37,7 @@ int init_check()
 
 int main(int ac, char **av)
 {
-	datas = malloc(sizeof(data_t));
-
-	if (ac != 2)
-	{
-		datas->input = error_usage();
-		write(STDERR_FILENO, datas->input, _strlen(datas->input));
-		exit(EXIT_FAILURE);
-	}
-
+	_init();
 	_strcpy(datas->file, av[1]);
 
 	datas->stream = fopen(av[1], "r");
