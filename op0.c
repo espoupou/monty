@@ -14,9 +14,19 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if (datas.arg == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		_free_datas();
 		exit(EXIT_FAILURE);
+	}
+
+	for (n = 0; datas.arg[n] != '\0'; n++)
+	{
+		if (!isdigit(datas.arg[n]) && datas.arg[n] != '-')
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			_free_datas();
+			exit(EXIT_FAILURE);
+		}
 	}
 
 	new = malloc(sizeof(stack_t));
@@ -40,12 +50,15 @@ void _push(stack_t **stack, unsigned int line_number)
 
 /**
  * _pall - print all element in the stack
+ * @stack: the stack adress
+ * @line_number: the line number
  * Return: nothing
  */
 
 void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *p = *stack;
+
 	UNUSED(line_number);
 
 	while (p != NULL)
@@ -57,13 +70,18 @@ void _pall(stack_t **stack, unsigned int line_number)
 
 /**
  * _pint - print first element ont he statck
+ * @stack: the stack adress
+ * @line_number: the line number
  * Return: Nothing
  */
 
-void _pint()
+void _pint(stack_t **stack, unsigned int line_number)
 {
 	if (datas.stack == NULL)
-		error_handler(7);
-
-	fprintf(stdout, "%d\n", datas.stack->n);
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		_free_datas();
+		exit(EXIT_FAILURE);
+	}
+	fprintf(stdout, "%d\n", (*stack)->n);
 }
