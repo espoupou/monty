@@ -144,3 +144,20 @@ void free_dlistint(stack_t *head)
 		free(tmp);
 	}
 }
+
+/**
+ * _free_datas - free all data
+ *
+ * Return: nothing
+ */
+
+void _free_datas(void)
+{
+	if (datas.stream)
+		fclose(datas.stream);
+
+	if (datas.input)
+		free(datas.input);
+
+	free_dlistint(datas.stack);
+}

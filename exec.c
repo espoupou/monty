@@ -1,59 +1,12 @@
 #include "monty.h"
 
 /**
- * check_stop - check if we have a separator
- * @c: the character
- *
- * Return: 0 or 1
- */
-
-int check_stop(char c)
-{
-	int i = 0;
-
-	switch (c)
-	{
-		case ' ':
-		case '\t':
-		case '\n':
-		case '\0':
-			i = 1;
-	}
-	return (i);
-}
-/**
- * clean - clean the input
- * @input: inputed
- *
- * Return: status 0 or 1
- */
-
-int clean(char *input)
-{
-	char *p;
-
-	while (*input == ' ' || *input == '\t')
-		input++;
-
-	p = input;
-	while (*p != '\n' && *p != '\0')
-	{
-		if (p != input && check_stop(*p) && check_stop(*(p - 1)))
-			_memcpy(p, p + 1, _strlen(p + 1));
-
-		p++;
-	}
-
-	return (1);
-}
-
-/**
  * exec_loop - the execution loop
  *
- * Return: status 0 or 1
- */
+ * Return: nothing
+*/
 
-int exec_loop(void)
+void exec_loop(void)
 {
 	int loop = 1;
 	size_t size = 256;
@@ -92,6 +45,4 @@ int exec_loop(void)
 		free(datas.input);
 		datas.input = NULL;
 	}
-
-	return (0);
 }

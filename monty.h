@@ -72,12 +72,11 @@ typedef struct data_s
 
 data_t datas;
 
-/* exec.c */
-int check_stop(char c);
-int exec_loop();
-
-/* mem_utils.c */
-char *_memcpy(char *dest, const char *src, unsigned int n);
+/* handler.c */
+void exec_loop();
+void (*get_op_function(char *opc))(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 /* char_utils.c */
 int _strlen(const char *s);
@@ -89,15 +88,7 @@ char *_strtok(char str[], const char *delim);
 /* char_utils1.c */
 int _charchk(char str[], const char *delim);
 int _strcmp(char *s1, char *s2);
-
-/* init.c */
-void _init_(char **av);
-void _free_datas();
-
-/* op_handler.c */
-void (*get_op_function(char *opc))(stack_t **stack, unsigned int line_number);
-void _stack(stack_t **stack, unsigned int line_number);
-void _queue(stack_t **stack, unsigned int line_number);
+char *_memcpy(char *dest, const char *src, unsigned int n);
 
 /* op0.c */
 void _push(stack_t **stack, unsigned int line_number);
@@ -125,5 +116,6 @@ stack_t *add_dnodeint(stack_t **head, const int n);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void free_dlistint(stack_t *head);
 stack_t *add_dnodeint_end(stack_t **head, const int n);
+void _free_datas();
 
 #endif

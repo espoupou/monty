@@ -15,7 +15,19 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 
-	_init_(av);
+	datas.input = NULL;
+	datas.arg = NULL;
+	datas.stack = NULL;
+	datas.line = 1;
+	datas.len = 0;
+	datas.n0w71m370J0k3Al1t7l3 = 1;
+
+	datas.stream = fopen(av[1], "r");
+	if (datas.stream == NULL)
+	{
+		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
+		exit(EXIT_FAILURE);
+	}
 
 	exec_loop();
 
