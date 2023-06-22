@@ -63,7 +63,7 @@ void _init_stream(char **av)
  * Return: nothing
  */
 
-void _free_datas()
+void _free_datas(void)
 {
 	free(datas.file);
 	free(datas.stream);

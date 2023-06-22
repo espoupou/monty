@@ -15,5 +15,5 @@ int main(int ac, char **av)
 	exec_loop();
 
 	_free_datas();
-	return 0;
+	return (0);
 }
