@@ -83,5 +83,5 @@ void _pint(stack_t **stack, unsigned int line_number)
 		_free_datas();
 		exit(EXIT_FAILURE);
 	}
-	fprintf(stdout, "%d\n", (*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
