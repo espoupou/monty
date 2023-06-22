@@ -34,7 +34,7 @@ void _nop(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * sub - sub the top two elements of the stack
+ * _sub - sub the top two elements of the stack
  * @stack: the stack adress
  * @line_number: the line number
  * Return: nothing
@@ -54,7 +54,7 @@ void _sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - div the top two elements of the stack
+ * _div - div the top two elements of the stack
  * @stack: the stack adress
  * @line_number: the line number
  * Return: nothing

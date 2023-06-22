@@ -67,6 +67,7 @@ void _pchar(stack_t **stack, unsigned int line_number)
 void _pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *p;
+
 	UNUSED(line_number);
 
 	p = *stack;
@@ -94,7 +95,7 @@ void _rotl(stack_t **stack, unsigned int line_number)
 	{
 		(*stack)->next->prev = NULL;
 
-		while(p->next != NULL)
+		while (p->next != NULL)
 			p = p->next;
 
 		p->next = *stack;
@@ -118,7 +119,7 @@ void _rotr(stack_t **stack, unsigned int line_number)
 	UNUSED(line_number);
 	if (*stack != NULL && (*stack)->next != NULL)
 	{
-		while(p->next != NULL)
+		while (p->next != NULL)
 			p = p->next;
 
 		p->next = *stack;
