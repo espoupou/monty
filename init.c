@@ -14,7 +14,7 @@ void _init_check(int ac)
 	if (ac != 2)
 	{
 		error = error_usage();
-		dprintf(2, error, _strlen(error));
+		dprintf(3, error, _strlen(error));
 		/* write(STDERR_FILENO, error, _strlen(error)); */
 		free(error);
 		exit(EXIT_FAILURE);
