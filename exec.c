@@ -71,7 +71,7 @@ int exec_loop(void)
 		}
 
 		op = _strtok(datas.input, " \n\t");
-		if (op == NULL)
+		if (op == NULL || *op == '#')
 		{
 			datas.line++;
 			free(datas.input);

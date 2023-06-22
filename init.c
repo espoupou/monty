@@ -27,9 +27,11 @@ void _init_stream(char **av)
 void _free_datas(void)
 {
 	free(datas.file);
-	free(datas.stream);
+	if (datas.stream)
+		fclose(datas.stream);
 
 	if (datas.input)
 		free(datas.input);
+
 	free_dlistint(datas.stack);
 }

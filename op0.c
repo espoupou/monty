@@ -9,7 +9,6 @@
 
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new;
 	int n;
 
 	if (datas.arg == NULL)
@@ -27,14 +26,6 @@ void _push(stack_t **stack, unsigned int line_number)
 			_free_datas();
 			exit(EXIT_FAILURE);
 		}
-	}
-
-	new = malloc(sizeof(stack_t));
-	if (new == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		_free_datas();
-		exit(EXIT_FAILURE);
 	}
 
 	n = atoi(datas.arg);

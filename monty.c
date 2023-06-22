@@ -20,6 +20,7 @@ int main(int ac, char **av)
 	datas.stack = NULL;
 	datas.line = 1;
 	datas.len = 0;
+	datas.stream = NULL;
 
 	_init_stream(av);
 
