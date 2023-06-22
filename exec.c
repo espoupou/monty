@@ -78,6 +78,7 @@ int exec_loop(void)
 			datas.input = NULL;
 			continue;
 		}
+
 		f = get_op_function(op);
 		if (!f)
 		{
