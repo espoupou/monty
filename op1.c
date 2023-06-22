@@ -11,7 +11,7 @@ void _add(stack_t **stack, unsigned int line_number)
 {
 	if (datas.len < 2)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		_free_datas();
 		exit(EXIT_FAILURE);
 	}
