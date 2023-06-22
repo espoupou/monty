@@ -47,8 +47,6 @@ typedef struct instruction_s
  * @len: stack length
  * @input: line instructions
  * @stream: input stream
- * @status: return status
- * @file: file name
  * @arg: the opc arg
  *
  * Description: all important datas are here
