@@ -124,6 +124,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 	}
 
 	n = (*stack)->n;
+
 	(*stack)->n = (*stack)->next->n;
 	(*stack)->next->n = n;
 }
