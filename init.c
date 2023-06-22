@@ -14,7 +14,8 @@ void _init_check(int ac)
 	if (ac != 2)
 	{
 		error = error_usage();
-		write(STDERR_FILENO, error, _strlen(error));
+		dprintf(2, error, _strlen(error));
+		/* write(STDERR_FILENO, error, _strlen(error)); */
 		free(error);
 		exit(EXIT_FAILURE);
 	}
@@ -22,7 +23,7 @@ void _init_check(int ac)
 	datas.input = NULL;
 	datas.arg = NULL;
 	datas.stack = NULL;
-	datas.line = 1;
+	datas.line = 0;
 }
 
 /**
