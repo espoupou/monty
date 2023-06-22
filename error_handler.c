@@ -60,7 +60,7 @@ char *error_open_stream()
 	}
 	_strcpy(error, "Error: Can't open file ");
 	_strcat(error, datas.file);
-
+	_strcat(error, "\n");
 	return (error);
 }
 
