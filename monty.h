@@ -113,6 +113,9 @@ void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
 
+/* op1.c */
+void _add(stack_t **stack, unsigned int line_number);
+
 /* utils.c */
 stack_t *add_dnodeint(stack_t **head, const int n);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
