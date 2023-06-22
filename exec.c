@@ -71,7 +71,13 @@ int exec_loop(void)
 		}
 
 		op = _strtok(datas.input, " \n\t");
-
+		if (op == NULL)
+		{
+			datas.line++;
+			free(datas.input);
+			datas.input = NULL;
+			continue;
+		}
 		f = get_op_function(op);
 		if (!f)
 		{

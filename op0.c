@@ -63,7 +63,7 @@ void _pall(stack_t **stack, unsigned int line_number)
 
 	while (p != NULL)
 	{
-		fprintf(stdout, "%d\n", p->n);
+		printf("%d\n", p->n);
 		p = p->next;
 	}
 }
@@ -83,5 +83,5 @@ void _pint(stack_t **stack, unsigned int line_number)
 		_free_datas();
 		exit(EXIT_FAILURE);
 	}
-	fprintf(stdout, "%d\n", (*stack)->n);
+	printf("%d\n", (*stack)->n);
 }
