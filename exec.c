@@ -11,7 +11,7 @@ int check_stop(char c)
 {
 	int i = 0;
 
-	switch(c)
+	switch (c)
 	{
 		case ' ':
 		case '\t':
@@ -31,19 +31,19 @@ int clean(char *input)
 {
 	char *p;
 
-	while(*input == ' ' || *input == '\t')
+	while (*input == ' ' || *input == '\t')
 		input++;
 
 	p = input;
-	while(*p != '\n' && *p != '\0')
+	while (*p != '\n' && *p != '\0')
 	{
-		if (p != input && check_stop(*p) && check_stop(*(p-1)))
+		if (p != input && check_stop(*p) && check_stop(*(p - 1)))
 			_memcpy(p, p + 1, _strlen(p + 1));
 
 		p++;
 	}
 
-	return 1;
+	return (1);
 }
 
 /**
@@ -52,7 +52,7 @@ int clean(char *input)
  * Return: status 0 or 1
  */
 
-int exec_loop()
+int exec_loop(void)
 {
 	int loop = 1;
 	size_t size = 256;
@@ -81,6 +81,8 @@ int exec_loop()
 		datas.arg = _strtok(NULL, " \n\t");
 		f(&datas.stack, datas.line);
 		datas.line++;
+		free(datas.input);
+		datas.input = NULL;
 	}
 
 	return (0);

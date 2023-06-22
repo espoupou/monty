@@ -8,13 +8,10 @@
 
 void error_handler(int code)
 {
-	switch(code)
+	switch (code)
 	{
 		case 6:
 			error_malloc();
-			break;
-		case 7:
-			empty_stack_err();
 			break;
 		default:
 			return;
@@ -48,7 +45,7 @@ char *error_malloc()
  * Return: nothing
  */
 
-void empty_stack_err()
+void empty_stack_err(void)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty", datas.line);
 }

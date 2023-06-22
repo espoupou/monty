@@ -14,7 +14,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if (datas.arg == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		_free_datas();
 		exit(EXIT_FAILURE);
 	}
@@ -24,14 +24,15 @@ void _push(stack_t **stack, unsigned int line_number)
 		error_handler(6);
 
 	n = atoi(datas.arg);
-/*	new->n = n;
-	new->next = stack;
-	new->prev = NULL;
-	if (stack != NULL)
-		stack->prev = new;
-	datas.len++;
-	stack = new;
-*/
+	/**
+	 *	new->n = n;
+	 *	new->next = stack;
+	 *	new->prev = NULL;
+	 *	if (stack != NULL)
+	 *	stack->prev = new;
+	 * datas.len++;
+	 * stack = new;
+	 */
 
 	add_dnodeint(stack, n);
 	datas.len++;
