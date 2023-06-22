@@ -85,3 +85,22 @@ void _pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
+
+/**
+ * _pop - removes the top element of the stack
+ * @stack: the stack adress
+ * @line_number: the line number
+ * Return: Nothing
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	if (datas.stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
+		_free_datas();
+		exit(EXIT_FAILURE);
+	}
+
+	delete_dnodeint_at_index(stack, 0);
+	datas.len--;
+}
