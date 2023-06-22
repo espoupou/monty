@@ -110,6 +110,7 @@ void _mul(stack_t **stack, unsigned int line_number);
 
 /* op2.c */
 void _mod(stack_t **stack, unsigned int line_number);
+void _pchar(stack_t **stack, unsigned int line_number);
 
 /* utils.c */
 stack_t *add_dnodeint(stack_t **head, const int n);
