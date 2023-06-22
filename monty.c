@@ -19,6 +19,7 @@ int main(int ac, char **av)
 	datas.arg = NULL;
 	datas.stack = NULL;
 	datas.line = 1;
+	datas.len = 0;
 
 	_init_stream(av);
 

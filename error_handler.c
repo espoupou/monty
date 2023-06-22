@@ -39,28 +39,3 @@ char *error_malloc()
 	_strcpy(error, "Error: malloc failed\n");
 	return (error);
 }
-
-/**
- * error_open_stream - can't open stream
- *
- * Return: error string
- */
-
-char *error_open_stream()
-{
-	int length;
-	char *error;
-
-	length = 23 + _strlen(datas.file);
-
-	error = malloc(sizeof(char) * (length + 1));
-	if (error == NULL)
-	{
-		return (NULL);
-	}
-	_strcpy(error, "Error: Can't open file ");
-	_strcat(error, datas.file);
-
-	return (error);
-}
-

@@ -69,13 +69,7 @@ data_t datas;
 
 /* error_handler.c */
 void error_handler(int code);
-void unknown_op_err();
 char *error_malloc();
-void empty_stack_err();
-char *error_open_stream();
-
-/* error_handler_1.c */
-char *error_usage();
 
 /* exec.c */
 int check_stop(char c);
@@ -95,11 +89,7 @@ char *_strtok(char str[], const char *delim);
 int _charchk(char str[], const char *delim);
 int _strcmp(char *s1, char *s2);
 
-/* input.c */
-int _getline();
-
 /* init.c */
-void _init_check(int ac);
 void _init_stream(char **av);
 void _free_datas();
 
