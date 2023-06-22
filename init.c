@@ -9,21 +9,20 @@
 
 void _init_check(int ac)
 {
-/*	char *error; */
+	char *error;
 
 	if (ac != 2)
 	{
-/*		error = error_usage(); */
-		fprintf(stderr, "USAGE: monty file\n");
-		/* write(STDERR_FILENO, error, _strlen(error)); */
-/*		free(error); */
+		error = error_usage();
+		write(STDERR_FILENO, error, _strlen(error));
+		free(error);
 		exit(EXIT_FAILURE);
 	}
 
 	datas.input = NULL;
 	datas.arg = NULL;
 	datas.stack = NULL;
-	datas.line = 0;
+	datas.line = 1;
 }
 
 /**
