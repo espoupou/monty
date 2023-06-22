@@ -14,7 +14,7 @@ void _init_check(int ac)
 	if (ac != 2)
 	{
 /*		error = error_usage(); */
-		fprintf(2, "USAGE: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		/* write(STDERR_FILENO, error, _strlen(error)); */
 /*		free(error); */
 		exit(EXIT_FAILURE);
