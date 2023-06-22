@@ -20,6 +20,9 @@ void _init_check(int ac)
 	}
 
 	datas.input = NULL;
+	datas.arg = NULL;
+	datas.stack = NULL;
+	datas.line = 1;
 }
 
 /**
@@ -34,6 +37,13 @@ void _init_stream(char **av)
 	char *error;
 
 	datas.file = malloc(sizeof(av[1]));
+	if (datas.file == NULL)
+	{
+		error = error_malloc();
+		write(STDERR_FILENO, error, _strlen(error));
+		free(error);
+		exit(EXIT_FAILURE);
+	}
 	_strcpy(datas.file, av[1]);
 
 	datas.stream = fopen(av[1], "r");
@@ -55,5 +65,9 @@ void _init_stream(char **av)
 
 void _free_datas()
 {
-	free(data.file);
+	free(datas.file);
+	free(datas.stream);
+
+	if (datas.input)
+		free(datas.input);
 }
