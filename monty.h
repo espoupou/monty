@@ -115,6 +115,7 @@ void _swap(stack_t **stack, unsigned int line_number);
 
 /* op1.c */
 void _add(stack_t **stack, unsigned int line_number);
+void _nop(stack_t **stack, unsigned int line_number);
 
 /* utils.c */
 stack_t *add_dnodeint(stack_t **head, const int n);
