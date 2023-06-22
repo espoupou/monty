@@ -23,6 +23,7 @@ int check_stop(char c)
 }
 /**
  * clean - clean the input
+ * @input
  *
  * Return: status 0 or 1
  */

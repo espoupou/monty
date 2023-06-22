@@ -17,7 +17,7 @@ void error_handler(int code)
 			return;
 	}
 
-	/* data freing */
+	_free_datas();
 	exit(EXIT_FAILURE);
 }
 
@@ -38,16 +38,6 @@ char *error_malloc()
 
 	_strcpy(error, "Error: malloc failed\n");
 	return (error);
-}
-
-/**
- * empty_stack_err - empty stack error
- * Return: nothing
- */
-
-void empty_stack_err(void)
-{
-	fprintf(stderr, "L%d: can't pint, stack empty", datas.line);
 }
 
 /**
