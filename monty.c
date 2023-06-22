@@ -15,7 +15,11 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 
-	_init_check(ac);
+	datas.input = NULL;
+	datas.arg = NULL;
+	datas.stack = NULL;
+	datas.line = 1;
+
 	_init_stream(av);
 
 	exec_loop();

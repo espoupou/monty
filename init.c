@@ -9,11 +9,11 @@
 
 void _init_check(int ac)
 {
-	char *error;
+	char *error = NULL;
 
 	if (ac != 2)
 	{
-		error = error_usage();
+		/* error = error_usage(); */
 		write(STDERR_FILENO, error, _strlen(error));
 		free(error);
 		exit(EXIT_FAILURE);
