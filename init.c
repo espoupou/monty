@@ -70,4 +70,5 @@ void _free_datas(void)
 
 	if (datas.input)
 		free(datas.input);
+	free_dlistint(datas.stack);
 }

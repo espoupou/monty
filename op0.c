@@ -104,3 +104,26 @@ void _pop(stack_t **stack, unsigned int line_number)
 	delete_dnodeint_at_index(stack, 0);
 	datas.len--;
 }
+
+/**
+ * _swap - waps the top two elements of the stack
+ * @stack: the stack adress
+ * @line_number: the line number
+ * Return: Nothing
+ */
+
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	int n;
+
+	if (datas.len < 2)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		_free_datas();
+		exit(EXIT_FAILURE);
+	}
+
+	n = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = n;
+}
