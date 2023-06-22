@@ -9,13 +9,9 @@
 
 int main(int ac, char **av)
 {
-	char *error;
-
 	if (ac != 2)
 	{
-		error = error_usage();
-		write(STDERR_FILENO, error, _strlen(error));
-		free(error);
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 
