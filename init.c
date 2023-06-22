@@ -1,31 +1,6 @@
 #include "monty.h"
 
 /**
- * _init_check - check basics
- * @ac: argument counter
- *
- * Return: nothing
- */
-
-void _init_check(int ac)
-{
-	char *error = NULL;
-
-	if (ac != 2)
-	{
-		/* error = error_usage(); */
-		write(STDERR_FILENO, error, _strlen(error));
-		free(error);
-		exit(EXIT_FAILURE);
-	}
-
-	datas.input = NULL;
-	datas.arg = NULL;
-	datas.stack = NULL;
-	datas.line = 1;
-}
-
-/**
  * _init_stream - inti
  * @av: argument vector
  *
@@ -50,9 +25,7 @@ void _init_stream(char **av)
 
 	if (datas.stream == NULL)
 	{
-		error = error_open_stream();
-		write(STDERR_FILENO, error, _strlen(error));
-		free(error);
+		fprintf(stderr, "Error: Can't open file %s", av[1]);
 		exit(EXIT_FAILURE);
 	}
 }
