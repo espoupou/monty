@@ -9,14 +9,14 @@
 
 void _init_check(int ac)
 {
-	char *error;
+/*	char *error; */
 
 	if (ac != 2)
 	{
-/*		error = error_usage();*/
+/*		error = error_usage(); */
 		dprintf(2, "USAGE: monty file\n");
 		/* write(STDERR_FILENO, error, _strlen(error)); */
-		free(error);
+/*		free(error); */
 		exit(EXIT_FAILURE);
 	}
 
