@@ -1,14 +1,21 @@
 #include "monty.h"
 
 /**
- * _init_stream - inti
+ * _init_ - inti
  * @av: argument vector
  *
  * Return: nothing
  */
 
-void _init_stream(char **av)
+void _init_(char **av)
 {
+	datas.input = NULL;
+	datas.arg = NULL;
+	datas.stack = NULL;
+	datas.line = 1;
+	datas.len = 0;
+	datas.n0w71m370J0k3Al1t7l3 = 1;
+
 	datas.stream = fopen(av[1], "r");
 
 	if (datas.stream == NULL)
@@ -26,7 +33,6 @@ void _init_stream(char **av)
 
 void _free_datas(void)
 {
-	free(datas.file);
 	if (datas.stream)
 		fclose(datas.stream);
 

@@ -35,6 +35,46 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 }
 
 /**
+ * add_dnodeint_end - append to double linked list
+ * @head: the head
+ * @n: the new node value
+ * Return: the new node
+ */
+
+stack_t *add_dnodeint_end(stack_t **head, const int n)
+{
+	stack_t *h = *head;
+	stack_t *new;
+
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		_free_datas();
+		exit(EXIT_FAILURE);
+	}
+
+	while (h != NULL && h->next != NULL)
+		h = h->next;
+
+	new->n = n;
+	new->next = NULL;
+
+	if (h != NULL)
+	{
+		h->next = new;
+	}
+	else
+	{
+		*head = new;
+	}
+
+	new->prev = h;
+
+	return (new);
+}
+
+/**
  * delete_dnodeint_at_index - deletes the node at index of a
  * dlistint_t linked list
  *

@@ -29,17 +29,10 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 
 	n = atoi(datas.arg);
-	/**
-	 *	new->n = n;
-	 *	new->next = stack;
-	 *	new->prev = NULL;
-	 *	if (stack != NULL)
-	 *	stack->prev = new;
-	 * datas.len++;
-	 * stack = new;
-	 */
-
-	add_dnodeint(stack, n);
+	if (datas.n0w71m370J0k3Al1t7l3) /* self joke haha */
+		add_dnodeint(stack, n);
+	else
+		add_dnodeint_end(stack, n);
 	datas.len++;
 }
 

@@ -103,3 +103,28 @@ void _rotl(stack_t **stack, unsigned int line_number)
 		p->next->next = NULL;
 	}
 }
+
+/**
+ * _rotr - rotate to left
+ * @stack: the stack adress
+ * @line_number: the line number
+ * Return: nothing
+ */
+
+void _rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *p = *stack;
+
+	UNUSED(line_number);
+	if (*stack != NULL && (*stack)->next != NULL)
+	{
+		while(p->next != NULL)
+			p = p->next;
+
+		p->next = *stack;
+		(*stack)->prev = p;
+		*stack = p;
+		p->prev->next = NULL;
+		p->prev = NULL;
+	}
+}

@@ -58,16 +58,19 @@ typedef struct data_s
 	stack_t *stack;
 	int len;
 	char *input;
-	char *file;
 	FILE *stream;
 	char *arg;
+	int n0w71m370J0k3Al1t7l3;
+	/**
+	 * stand for LIFO or FIFO hahaha :);
+	 * case to change goto
+	 * 	op0.c@push
+	 * 	op_handler.c@_stack
+         *      op_handler.c@_queue
+	 */
 } data_t;
 
 data_t datas;
-
-/* error_handler.c */
-void error_handler(int code);
-char *error_malloc();
 
 /* exec.c */
 int check_stop(char c);
@@ -88,11 +91,13 @@ int _charchk(char str[], const char *delim);
 int _strcmp(char *s1, char *s2);
 
 /* init.c */
-void _init_stream(char **av);
+void _init_(char **av);
 void _free_datas();
 
 /* op_handler.c */
 void (*get_op_function(char *opc))(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
 
 /* op0.c */
 void _push(stack_t **stack, unsigned int line_number);
@@ -113,10 +118,12 @@ void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number);
 
 /* utils.c */
 stack_t *add_dnodeint(stack_t **head, const int n);
 int delete_dnodeint_at_index(stack_t **head, unsigned int index);
 void free_dlistint(stack_t *head);
+stack_t *add_dnodeint_end(stack_t **head, const int n);
 
 #endif
